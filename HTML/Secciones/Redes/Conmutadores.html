@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Switches - APJ TECH</title>
+  <link rel="stylesheet" href="/CSS/Redes_Conmutadores.css">
+  <link rel="icon" href="/Recursos/Images/favicon.png" type="image/png">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="/HTML/index.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Inicio" style="width:16px; height:16px; vertical-align:middle; margin-right:5px;">
+        Inicio
+      </a>
+      <a href="/HTML/Sobre_Nosotros.html">Sobre Nosotros</a>
+      <a href="/HTML/Trabaja_Con_Nostros.html">Trabaja con Nosotros</a>
+      <a href="/HTML/Precios.html">Precios</a>
+
+      <div class="menu-desplegable">
+        <a>Secciones</a>
+        <div class="menu-desplegable-content">
+          <a href="/HTML/Secciones/Redes/Redes.html">Redes</a>
+          <a href="/HTML/Secciones/Hardware/Arquitectura_PC.html">Hardware</a>
+          <a href="/HTML/Paginas.Servicios/Ciberseguridad.html">Ciberseguridad</a>
+          <a href="/HTML/Secciones/Herramientas_Online/Herramientas.html">Herramientas online</a>
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+  <main>
+    <section class="stats">
+        <div class="stat">
+          <h2>1500+</h2>
+          <p>Switches Configurados</p>
+        </div>
+      
+        <div class="stat">
+          <h2>600+</h2>
+          <p>Redes Empresariales Implementadas</p>
+        </div>
+      
+        <div class="stat">
+          <h2>200+</h2>
+          <p>VLANs Segmentadas</p>
+        </div>
+      
+        <div class="stat">
+          <h2>99.9%</h2>
+          <p>Disponibilidad de Red</p>
+        </div>
+      </section>
+      
+
+    <section class="switches-info">
+        <h2>Tipos de Switches de Red</h2>
+        <div class="switches-categorias">
+          <article>
+            <h3>Según su Configuración</h3>
+            <ul>
+              <li><strong>No Gestionables:</strong> Plug-and-play sin configuración. Ideales para entornos simples.</li>
+              <li><strong>Gestionables:</strong> Permiten configurar, monitorear y gestionar el tráfico de red.</li>
+              <li><strong>Inteligentes:</strong> Ofrecen configuración básica como VLANs y QoS.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Según su Estructura</h3>
+            <ul>
+              <li><strong>Fijos:</strong> Número de puertos predeterminados. Económicos y directos.</li>
+              <li><strong>Modulares:</strong> Permiten agregar tarjetas o módulos según necesidad.</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Según su Función en la Red</h3>
+            <ul>
+              <li><strong>De Acceso:</strong> Conectan dispositivos finales (PCs, impresoras, etc.).</li>
+              <li><strong>De Distribución:</strong> Agregan y gestionan el tráfico entre switches de acceso.</li>
+              <li><strong>De Núcleo:</strong> Transportan grandes volúmenes de datos con alta velocidad.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+      <section class="switches-avanzados">
+        <h2>Tipos Avanzados de Switches de Red</h2>
+        <div class="switches-avanzados-grid">
+          <article>
+            <h3>Switches de Capa 2</h3>
+            <p>Operan en la capa de enlace de datos del modelo OSI. Usan direcciones MAC para reenviar tramas. Son ideales para redes LAN internas que no requieren enrutamiento.</p>
+          </article>
+          <article>
+            <h3>Switches de Capa 3</h3>
+            <p>Incorporan capacidades de enrutamiento entre VLANs y subredes utilizando direcciones IP. Funcionan como un cruce entre switch y router, muy útiles en redes empresariales complejas.</p>
+          </article>
+          <article>
+            <h3>Switches PoE (Power over Ethernet)</h3>
+            <p>Proveen energía eléctrica a través del cable de red, eliminando la necesidad de cables de alimentación separados. Comúnmente usados con cámaras IP, puntos de acceso WiFi y teléfonos VoIP.</p>
+          </article>
+          <article>
+            <h3>Switches Industriales</h3>
+            <p>Diseñados para ambientes extremos: temperaturas, vibraciones o humedad. Se usan en fábricas, automatización industrial o exteriores.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="switches-detalles">
+        <h2>Características Clave y Cómo Elegir un Switch</h2>
+        <div class="detalle-grid">
+          <article>
+            <h3>Velocidad de Puertos</h3>
+            <p>Los switches pueden ofrecer velocidades de <strong>10/100 Mbps</strong> (Fast Ethernet), <strong>1 Gbps</strong> (Gigabit) o <strong>10 Gbps</strong> (para centros de datos). Es importante elegir la velocidad adecuada según el tráfico esperado.</p>
+          </article>
+          <article>
+            <h3>Soporte VLAN</h3>
+            <p>La capacidad de dividir lógicamente la red en subredes virtuales mejora la seguridad y eficiencia. Es esencial en switches gestionables y de capa 3.</p>
+          </article>
+          <article>
+            <h3>QoS (Calidad de Servicio)</h3>
+            <p>Permite priorizar el tráfico sensible como videollamadas o VoIP, garantizando un rendimiento estable en aplicaciones críticas.</p>
+          </article>
+          <article>
+            <h3>Redundancia y Alta Disponibilidad</h3>
+            <p>Funciones como STP (Spanning Tree Protocol) o LACP permiten mantener la red activa incluso si un enlace falla, aumentando la resiliencia de la infraestructura.</p>
+          </article>
+          <article>
+            <h3>Seguridad Integrada</h3>
+            <p>Algunos switches ofrecen autenticación 802.1X, listas de control de acceso (ACLs) y protección contra ataques ARP spoofing, vital en entornos empresariales.</p>
+          </article>
+          <article>
+            <h3>Gestión Centralizada</h3>
+            <p>Los switches gestionables pueden ser controlados desde plataformas SNMP o interfaces web/CLI, lo que facilita el monitoreo y configuración remota.</p>
+          </article>
+        </div>
+      </section>
+  </main>
+
+
+  <a class="soporte-btn" href="/HTML/Soporte.html">Soporte ⚙️</a>
+  
+  <div class="boton-volver-container"> <!-- Boton volver hacia atrás, en click, volver historial hacia atrás. -->
+  <button class="boton-volver" onclick="history.back()">← Volver a la página anterior</button>
+  </div>
+
+</body>
+</html>

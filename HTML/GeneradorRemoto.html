@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Generador de Código - APJ TECH</title>
+  <link rel="icon" href="/Recursos/Images/favicon.png" type="image/png">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #333;
+      color: #ffa500;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+
+    .codigo {
+      font-size: 4rem;
+      background-color: #FFFF;
+      padding: 20px 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #ffa500;
+      margin-top: 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .codigo:hover {
+      background-color: #ffd152;
+    }
+
+    .mensaje {
+      font-size: 2rem;
+      margin-top: 15px;
+      color: #ffa500;
+      margin-top: 40px;
+    }
+
+    .copiado {
+      color: #00ff90;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Tu código de 6 dígitos:</h1>
+  <div class="codigo" id="codigo" onclick="copiarCodigo()"></div>
+  <div class="mensaje" id="mensaje">Haz clic en el número para copiar</div>
+
+  <script>
+   // Función que genera un número aleatorio de 6 cifras y lo muestra en la página
+  function generarCodigo() {
+    // Genera un número aleatorio entre 100000 y 999999
+    const numero = Math.floor(100000 + Math.random() * 900000);
+    
+    // Busca el elemento con id "codigo" y reemplaza su contenido con el número generado
+    document.getElementById("codigo").textContent = numero;
+  }
+
+  // Función que copia el número mostrado al portapapeles y muestra un mensaje de confirmación
+  function copiarCodigo() {
+    // Obtiene el número actual del elemento con id "codigo"
+    const codigo = document.getElementById("codigo").textContent;
+
+    // Usa la API del portapapeles para copiar el texto
+    navigator.clipboard.writeText(codigo).then(() => {
+      // Busca el elemento con id "mensaje" para mostrar una notificación
+      const mensaje = document.getElementById("mensaje");
+
+      // Cambia el texto del mensaje para confirmar que se ha copiado
+      mensaje.textContent = "¡Código copiado al portapapeles!";
+
+      // Añade una clase CSS para aplicar estilos al mensaje copiado
+      mensaje.classList.add("copiado");
+
+      // Después de 2 segundos, restaura el mensaje original y quita el estilo especial
+      setTimeout(() => {
+        // Texto original que invita al usuario a copiar de nuevo
+        mensaje.textContent = "Haz clic en el número para copiar";
+
+        // Elimina la clase CSS para volver al estilo normal
+        mensaje.classList.remove("copiado");
+      }, 2000); // Tiempo en milisegundos (2000 ms = 2 segundos)
+    });
+  }
+
+  // Ejecuta la función generarCodigo automáticamente cuando se cargue la página
+  window.onload = generarCodigo;
+  </script>
+
+</body>
+</html>

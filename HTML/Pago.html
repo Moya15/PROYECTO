@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario de Pago - APJ TECH</title>
+  <link rel="stylesheet" href="/CSS/Pago.css">
+  <link rel="icon" href="/Recursos/Images/favicon.png" type="image/png">
+</head>
+
+<body>
+  <main class="contenedor-formulario">
+    <h1>Datos para el Pago</h1>
+    <!-- Puedes mantener los inputs si quieres mostrarlos -->
+    <label for="dni">DNI</label>
+    <input type="text" id="dni" name="dni" required>
+
+    <label for="empresa">Empresa solicitante</label>
+    <input type="text" id="empresa" name="empresa" required>
+
+    <label for="nombre">Nombre</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="apellidos">Apellidos</label>
+    <input type="text" id="apellidos" name="apellidos" required>
+
+    <label for="direccion">Dirección de la Empresa</label>
+    <input type="text" id="direccion" name="direccion" required>
+
+    <label for="tarjeta">Tarjeta de Crédito</label>
+    <input type="text" id="tarjeta" name="tarjeta" placeholder="XXXX XXXX XXXX XXXX" required>
+
+    <button onclick="window.location.href='/HTML/GraciasPorSuCompra.html'" class="boton-enviar">
+      Enviar y Procesar Pago
+    </button>
+  </main>
+</body>
+</html>

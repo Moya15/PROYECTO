@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generador de Varias MAC - APJ TECH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="/Recursos/Images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="/CSS/GeneradorContraseñas.css" />
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="/HTML/index.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Inicio" style="width:16px; height:16px; vertical-align:middle; margin-right:5px;">
+        Inicio
+      </a>
+      <a href="/HTML/Sobre_Nosotros.html">Sobre Nosotros</a>
+      <a href="/HTML/Trabaja_Con_Nostros.html">Trabaja con Nosotros</a>
+      <a href="/HTML/Precios.html">Precios</a>
+
+      <div class="menu-desplegable">
+        <a>Secciones</a>
+        <div class="menu-desplegable-content">
+          <a href="/HTML/Secciones/Redes/Redes.html">Redes</a>
+          <a href="/HTML/Secciones/Hardware/Arquitectura_PC.html">Hardware</a>
+          <a href="/HTML/Paginas.Servicios/Ciberseguridad.html">Ciberseguridad</a>
+          <a href="/HTML/Secciones/Herramientas_Online/Herramientas.html">Herramientas online</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Generador de Direcciones MAC</h2>
+
+    <!-- Campo para ingresar la cantidad deseada -->
+    <input type="number" id="cantidad" min="1" max="50" placeholder="Cantidad (1-50)" style="margin-bottom: 15px; padding: 10px; border-radius: 6px; width: 200px; text-align: center;" />
+
+    <button onclick="generarMACs()">Generar MAC</button>
+    <div id="mac"></div> <!-- Aquí se muestran las MACs generadas -->
+
+      <div class="boton-volver-container"> <!-- Boton volver hacia atrás, en click, volver historial hacia atrás. -->
+  <button class="boton-volver" onclick="history.back()">← Volver a la página anterior</button>
+  </div>
+  </main>
+
+  <footer>&copy; 2025 APJ TECH. Herramientas en línea para profesionales.</footer>
+
+  <script>
+
+const hex = "0123456789ABCDEF"
+    function generarMAC() { // Función que genera una dirección MAC aleatoria (una sola)
+      
+      const hex = "0123456789ABCDEF";     // Cadena con los caracteres hexadecimales posibles (de 0 a F)
+      let mac = [];  // Arreglo para almacenar los 6 pares hexadecimales de la MAC
+      for (let i = 0; i < 6; i++) {   // Un bucle para generar 6 pares (porque una MAC tiene 6 bloques)
+        let par = hex[Math.floor(Math.random() * 16)] + hex[Math.floor(Math.random() * 16)];
+        mac.push(par);   // Agrega el par al array 'mac'
+      }  // Genera un par de caracteres hexadecimales aleatorios
+      return mac.join(":");  // Une los pares con ":" para formar una dirección MAC válida y la devuelve
+    }
+
+    function generarMACs() { // Función que genera múltiples direcciones MAC según la cantidad que el usuario especifique
+      const cantidad = parseInt(document.getElementById("cantidad").value);   // Obtiene el valor ingresado por el usuario desde un input con ID "cantidad"
+      const contenedor = document.getElementById("mac");   // Obtiene el contenedor donde se mostrarán las MACs generadas
+      contenedor.innerHTML = "";   // Limpia el contenido anterior del contenedor (si había)
+
+      if (isNaN(cantidad) || cantidad < 1 || cantidad > 50) {  // Validación: si el número ingresado no es válido (no es número, menor a 1 o mayor a 50)
+        contenedor.innerHTML = "<p style='color: red;'>Por favor, ingresa un número entre 1 y 50.</p>";  // Muestra un mensaje de error en rojo y termina la función
+        return;
+      }
+
+      let lista = "<ul style='list-style: none; padding: 0;'>";  // Empieza a construir una lista HTML para mostrar las MACs sin viñetas
+      for (let i = 0; i < cantidad; i++) {  // Genera tantas direcciones MAC como el número especificado
+        lista += `<li>${generarMAC()}</li>`; // Añade cada MAC como un elemento de lista
+      }
+      lista += "</ul>"; // Cierra la lista
+      contenedor.innerHTML = lista;  // Muestra la lista generada dentro del contenedor
+    }
+  </script>
+</body>
+</html>
