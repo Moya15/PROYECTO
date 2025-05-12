@@ -1,0 +1,257 @@
+:root {
+  --primary: #f39c12;
+  --primary-dark: #e67e22;
+  --bg-light: #f9f9f9;
+  --bg-white: #ffffff;
+  --text-dark: #333;
+  --text-light: #666;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  }
+
+  /* Menú */
+  header {
+    background-color: #222;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px;
+  }
+
+  nav a:hover {
+    border-bottom: 3px solid #ffa500;
+  }
+
+  /* Estadísticas */
+  .stats {
+    background: url('https://images.unsplash.com/photo-1591696205602-2f950c417cb9') no-repeat center center/cover;
+    color: #000000;
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 10px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+    margin: 15px;
+  }
+
+  .stat h2 {
+    font-size: 2.5em;
+    margin-bottom: 5px;
+  }
+
+  .stat p {
+    font-size: 1em;
+    letter-spacing: 1px;
+  }
+
+  /* Sección de presentación */
+  .presentacion {
+    text-align: center;
+    padding: 50px 20px;
+  }
+
+  .presentacion h1 {
+    font-size: 2em;
+  }
+
+  .presentacion h1 span {
+    font-weight: bold;
+    color: black;
+  }
+
+  .presentacion p {
+    margin-top: 10px;
+    font-size: 1.1em;
+    color: #666;
+  }
+
+  /* Sección de presentación del equipo */
+    .personas {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 60px 20px;
+    background: #ffffff; /* fondo suave basado en el naranja */
+    }
+
+  .persona {
+    background: rgb(255, 255, 255);
+    border: 2px solid #ffa500;
+    border-radius: 16px;
+    padding: 25px 20px;
+    max-width: 260px;
+    text-align: center;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #333;
+  }
+
+  .persona:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .persona img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    filter: grayscale(20%);
+  }
+
+  .persona h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: #ffa500;
+  }
+
+  .persona p {
+    font-size: 0.95em;
+    line-height: 1.4em;
+    color: #333;
+  }
+
+  .persona a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  /* Botón flotante de soporte */
+  .soporte-btn {
+    position: fixed;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: var(--primary);
+    color: white;
+    padding: 14px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: var(--shadow);
+    z-index: 2000;
+    transition: background 0.3s;
+  }
+
+  .soporte-btn:hover {
+    background: var(--primary-dark);
+  }
+
+  /* Sponsors */
+  /* Sección de patrocinadores */
+.sponsors-section {
+background-color: #fff;
+padding: 50px 20px;
+text-align: center;
+border-top: 4px solid #ffa500;
+border-bottom: 4px solid #ffa500;
+}
+
+.sponsors-title {
+font-size: 2em;
+color: #333;
+margin-bottom: 30px;
+font-weight: bold;
+}
+
+.sponsors-marquee {
+overflow: hidden;
+position: relative;
+width: 100%;
+}
+
+.sponsors-track {
+display: flex;
+gap: 60px;
+animation: scrollSponsors 30s linear infinite;
+}
+
+.sponsors-track img {
+height: 50px;
+max-width: 100px;
+filter: grayscale(30%);
+transition: transform 0.3s ease;
+}
+
+.sponsors-track img:hover {
+transform: scale(1.1);
+filter: grayscale(0%);
+}
+
+/* Definición de una animación llamada 'scrollSponsors' */
+@keyframes scrollSponsors {
+  
+  /* Estado inicial de la animación (0% del progreso) */
+  0% {
+    /* Mueve el contenido completamente hacia la derecha, fuera del contenedor */
+    transform: translateX(100%);
+  }
+
+  /* Estado final de la animación (100% del progreso) */
+  100% {
+    /* Mueve el contenido completamente hacia la izquierda, fuera del contenedor */
+    transform: translateX(-100%);
+  }
+}
+
+.menu-desplegable {
+  position: relative;
+  display: inline-block;
+}
+
+.menu-desplegable-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.menu-desplegable-content a {
+  color: black;
+  padding: 10px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.menu-desplegable-content a:hover {
+  background-color: #b8b6b6;
+}
+
+.menu-desplegable:hover .menu-desplegable-content {
+  display: block;
+}
+
+.menu-desplegable > a {
+  display: inline-block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: bold;
+  vertical-align: middle;
+}
