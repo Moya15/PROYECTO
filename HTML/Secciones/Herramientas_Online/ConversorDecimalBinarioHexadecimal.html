@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Conversor Dec Bin Hex - APJ TECH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/CSS/GeneradorContraseñas.css" />
+  <link rel="icon" href="/Recursos/Images/favicon.png" type="image/png">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="/HTML/index.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Inicio" style="width:16px; height:16px; vertical-align:middle; margin-right:5px;">
+        Inicio
+      </a>
+      <a href="/HTML/Sobre_Nosotros.html">Sobre Nosotros</a>
+      <a href="/HTML/Trabaja_Con_Nostros.html">Trabaja con Nosotros</a>
+      <a href="/HTML/Precios.html">Precios</a>
+
+      <div class="menu-desplegable">
+        <a>Secciones</a>
+        <div class="menu-desplegable-content">
+          <a href="/HTML/Secciones/Redes/Redes.html">Redes</a>
+          <a href="/HTML/Secciones/Hardware/Arquitectura_PC.html">Hardware</a>
+          <a href="/HTML/Paginas.Servicios/Ciberseguridad.html">Ciberseguridad</a>
+          <a href="/HTML/Secciones/Herramientas_Online/Herramientas.html">Herramientas online</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  
+<main>
+  <h2>Conversor Decimal / Binario / Hexadecimal</h2>
+
+  <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px; width: 100%;">
+    <input type="text" id="decimal" placeholder="Decimal" style="padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+    <input type="text" id="binary" placeholder="Binario" style="padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+    <input type="text" id="hex" placeholder="Hexadecimal" style="padding: 10px; border-radius: 8px; border: 1px solid #ccc;">
+  </div>
+  
+    <div class="boton-volver-container"> <!-- Boton volver hacia atrás, en click, volver historial hacia atrás. -->
+  <button class="boton-volver" onclick="history.back()">← Volver a la página anterior</button>
+  </div>
+
+</main>
+
+  <footer>&copy; 2025 APJ TECH. Herramientas en línea para profesionales.</footer>
+
+
+  <script>
+    //Los campos
+  const decimalInput = document.getElementById("decimal");
+  const binaryInput = document.getElementById("binary");
+  const hexInput = document.getElementById("hex");
+
+  //Funcion que actualiza cuando se ingresan datos en el campo DECIMAL
+  function updateFromDecimal() {
+    const dec = parseInt(decimalInput.value, 10); // Convierte el valor a entero a base 10 
+    if (!isNaN(dec)) {
+      binaryInput.value = dec.toString(2); // Convierte a Binario
+      hexInput.value = dec.toString(16).toUpperCase(); // COnvierte a Hex pero con mayusculas
+    } else {
+        //Si no es un numero valido no se escribe en ningun campo
+      binaryInput.value = "";
+      hexInput.value = "";
+    }
+  }
+// Funcion 
+  function updateFromBinary() { //Actualiza el decimal y hex por el valor binario
+    const bin = binaryInput.value;
+    if (/^[01]+$/.test(bin)) { // Verifica que solo contenga 0 y 1 
+      const dec = parseInt(bin, 2); // Convierte a decimal (2)
+      decimalInput.value = dec;
+      hexInput.value = dec.toString(16).toUpperCase(); // Convierte a Hex
+    } else {
+         //Si no es un numero valido no se escribe en ningun campo, lo mismo de arriba
+      decimalInput.value = "";
+      hexInput.value = "";
+    }
+  }
+  // FUncion que actualiza el decimal y binario apartir de Hex
+  function updateFromHex() {
+    const hex = hexInput.value;
+    if (/^[0-9a-fA-F]+$/.test(hex)) { // Verifica que contenga caracteres hexadecimales validos
+      const dec = parseInt(hex, 16); // Convierte el numero desde base 16
+      decimalInput.value = dec;
+      binaryInput.value = dec.toString(2); // Convierte binario
+    } else {
+        // Lo mismo de arriba
+      decimalInput.value = "";
+      binaryInput.value = "";
+    }
+  }
+// Asignamos esto para que los campos reaccionen al escribir.
+  decimalInput.addEventListener("input", updateFromDecimal);
+  binaryInput.addEventListener("input", updateFromBinary);
+  hexInput.addEventListener("input", updateFromHex);
+</script>
+
+</body>
+</html>

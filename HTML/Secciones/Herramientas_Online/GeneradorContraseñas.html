@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Generador de Contraseñas - APJ TECH</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/CSS/GeneradorContraseñas.css" />
+  <link rel="icon" href="/Recursos/Images/favicon.png" type="image/png">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <a href="/HTML/index.html">
+        <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Inicio" style="width:16px; height:16px; vertical-align:middle; margin-right:5px;">
+        Inicio
+      </a>
+      <a href="/HTML/Sobre_Nosotros.html">Sobre Nosotros</a>
+      <a href="/HTML/Trabaja_Con_Nostros.html">Trabaja con Nosotros</a>
+      <a href="/HTML/Precios.html">Precios</a>
+
+      <div class="menu-desplegable">
+        <a>Secciones</a>
+        <div class="menu-desplegable-content">
+          <a href="/HTML/Secciones/Redes/Redes.html">Redes</a>
+          <a href="/HTML/Secciones/Hardware/Arquitectura_PC.html">Hardware</a>
+          <a href="/HTML/Paginas.Servicios/Ciberseguridad.html">Ciberseguridad</a>
+          <a href="/HTML/Secciones/Herramientas_Online/Herramientas.html">Herramientas online</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Generador de Contraseñas Seguras</h2>
+    <!-- Botón que genera una contraseña aleatoria al hacer clic.
+       - Crea un array de 12 elementos
+       - Lo rellena con caracteres aleatorios del string 'c'
+       - Muestra la contraseña en el elemento <p id="p"> -->
+    <button onclick="p.textContent = Array(12).fill(0).map(() => c[Math.random() * c.length | 0]).join('')">
+      Generar
+    </button>
+    <!-- Aquí se mostrará la contraseña generada -->
+    <p id="p"></p>
+    <!-- Botón para volver a la página anterior usando el historial del navegador -->
+      <div class="boton-volver-container"> <!-- Boton volver hacia atrás, en click, volver historial hacia atrás. -->
+  <button class="boton-volver" onclick="history.back()">← Volver a la página anterior</button>
+  </div>
+  </main>
+
+  <footer>&copy; 2025 APJ TECH. Herramientas en línea para profesionales.</footer>
+
+  <script>
+    const c = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()";
+    const p = document.getElementById("p");
+  </script>
+</body>
+</html>
